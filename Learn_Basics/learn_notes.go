@@ -64,4 +64,45 @@ func main() {
 	fmt.Println(multi_2)
 	fmt.Println(multi_3)
 
+	// Variables are CASE SENSITIVE - age, Age and AGE are three different variables
+
+	//CONSTANTS
+	// variables with fixed values
+	// Can be declared inside or outside the fucntion
+	// Typed Constant - type is known
+	const AUTHENTICATION int = 1812
+	// Untyped Constant - type not known
+	const PASSWORD = "A@#@MKANSLD"
+	// Multiple Constant Declaration
+	const (
+		A             int = 1812
+		AUTHORIZATION int = 1813
+		COA               = "Change of Authorization"
+	)
+
+	// OUTPUT - Printing
+	/*
+		-Print() - Prints with no spaces or lines, put space iff printing integers
+		-Println() - Prints with new line and puts space between printing variables Println(i, j) = "i_value j_value"
+		-Printf() - consists of formatting verbs for special case outputs = https://www.w3schools.com/go/go_formatting_verbs.php
+
+	*/
+
+	// Data Types
+	/*
+		-Boolean
+		-String
+		-Float
+			-float32 & float64
+		-int
+			-Signed int = +ve and -ve values
+				- int = 32(in 32 bit os systems) 64 bits(64 bits os systems)
+				- int8 = -128 to 127 , var _num int8 = 500 -----> ERROR! FUCK YOU!
+				- int16, 32, 64
+			-Unsigned Integers = only +ve
+				- uint
+				- will have same ranges as above STARTING FROM 0
+	*/
+
+	// START FROM ARRAYS
 }
