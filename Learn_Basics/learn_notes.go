@@ -6,6 +6,7 @@
 -Great Memory Management
 -Statically Typed (i.e type checking before execution => variables are defined befoore execution duromg complie time, unlike python where variables are dtermined during the runtime which makes it slower and susceptible to errors.)
 */
+// TEST PUSH
 
 //APPLICATIONS
 /*
