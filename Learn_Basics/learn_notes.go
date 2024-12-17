@@ -106,4 +106,26 @@ func main() {
 	*/
 
 	// START FROM ARRAYS
+
+	// ARRAYS
+	var len_arr = [4]int{1, 2, 3, 4}            // Fininte length array
+	var no_len_arr = [...]int{1, 2, 3, 4, 5, 6} // No length array
+	no_var := [3]string{"BMW", "Audi", "Merc"}
+
+	fmt.Print(no_var) //Using only Print() will not make new line for print
+	fmt.Println((len_arr))
+	fmt.Println(no_len_arr)
+	fmt.Println("Acess Array Element:", len_arr[2])
+
+	// Array Initialization
+	not_initialized := [5]int{}
+	partial := [4]int{1, 2}
+	full := [3]int{1, 2, 3}
+	specific := [5]int{1: 20, 3: 5} //NOT SLICING but assigning values to specific index numbers
+	fmt.Println("ARRAY NOT INITIALIZED", not_initialized)
+	fmt.Println("ARRAY PARTIALLY INITIALIZED", partial)
+	fmt.Println("ARRAY FULLY INITIALIZED", full)
+	fmt.Println("ARRAY SPECIFICALLY INITIALIZED", specific)
+	fmt.Println("LENGTH OF ARRAY", len(specific))
+
 }
