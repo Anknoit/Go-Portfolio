@@ -22,6 +22,10 @@ package main
 
 import (
 	"fmt"
+	// if we import a package witha underscore in front
+	// The underscore import is a way to include a package without directly using its exported identifiers.
+	// It is commonly used for packages that perform initialization or registration tasks.
+	// It helps keep the code clean and avoids unused import errors while still allowing the necessary side effects to occur.
 )
 
 func main() {
@@ -127,5 +131,47 @@ func main() {
 	fmt.Println("ARRAY FULLY INITIALIZED", full)
 	fmt.Println("ARRAY SPECIFICALLY INITIALIZED", specific)
 	fmt.Println("LENGTH OF ARRAY", len(specific))
+
+	// START FROM SLICES
+
+	// SLICES
+	// Similar to a	rray but size is flexible
+	myslice := []int{} //Initialized an empty slice of length=capacity=0
+	myslice2 := []int{1, 2, 3, 4}
+	fmt.Println(myslice)
+	fmt.Println(myslice2)
+	fmt.Println("length of slice1:", len(myslice))
+	fmt.Println("capacity of slice1:", cap(myslice))
+	fmt.Println("length of slice2:", len(myslice2))
+	fmt.Println("capacity of slice2:", cap(myslice2))
+	// Creating slice from an Array
+	var arr_temp = [6]int{1, 2, 3, 4, 5, 6}
+	slice_arr := arr_temp[1:4] // [start-include : end-index-1]
+	fmt.Println("slice made from array:", slice_arr)
+	fmt.Println("Length of slice made from array:", len(slice_arr))
+	fmt.Println("Capacity of slice made from array:", cap(slice_arr)) //Capacity will be the count from first index in slice to last index in that array
+
+	// Creating Slice from Make
+	// make([]datatype, length, capacity)
+	slice_make1 := make([]string, 4, 6)
+	//Appending elements in slice
+	values_in := append(slice_make1, "Apple", "Mango", "Grapes")
+
+	fmt.Println("Slice made from make", slice_make1)
+	fmt.Println("Values appended into Slice made from make", values_in)
+
+	fmt.Println("Length of Slice made from make", len(slice_make1))
+	fmt.Println("Capacity of Slice made from make", cap(slice_make1))
+	//Why do we use slice when we have an option to define flexible length in arrays using [...], my guess is that it offers unlimited length for the array rather than flexible length according to the inputs
+
+	//Combining two ormore slices
+	slice1 := []int{1, 2, 3}
+	slice2 := []int{4, 5, 6}
+	slice3_combined := append(slice1, slice2...) // ... at the end is important
+	fmt.Println("Combined SLice", slice3_combined)
+
+	// Copying of part of elements in an array or slice and copying arrays into new one for memory efficiency
+
+	//OPERATORS
 
 }
