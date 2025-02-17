@@ -16,7 +16,7 @@ func array_ds(min_arr []int) {
 		if min_arr[n] < min_arr[m] {
 			m = n
 		}
-		n++
+		n++ //equivalent to n; n<len(min_arr); n++
 	}
 	fmt.Println(min_arr)
 	if m != 0 {
