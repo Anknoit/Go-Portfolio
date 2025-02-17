@@ -6,13 +6,24 @@ import (
 )
 
 // Finding min value in an array
-// 1st Method - comparing digits in list
+// 1st Method - comparing digits in list, two pointer method
 func array_ds(min_arr []int) {
-	for i := 0; i < len(min_arr)-1; i++ {
-		if min_arr[0] < min_arr[i+1] {
-			fmt.Println("Shortest Digit", min_arr[i])
-		}
+	if len(min_arr) < 2 {
+		fmt.Println("Array must have atleast 2 Elements!")
 	}
+	m, n := 0, 1
+	for n < len(min_arr) {
+		if min_arr[n] < min_arr[m] {
+			m = n
+		}
+		n++
+	}
+	fmt.Println(min_arr)
+	if m != 0 {
+		min_arr[0], min_arr[m] = min_arr[m], min_arr[0]
+		fmt.Println(min_arr)
+	}
+	fmt.Println("Shortest element", min_arr[0])
 }
 
 // 2nd Method - Arranging in ascending order
@@ -38,7 +49,7 @@ func isPallindrome(s string) bool {
 
 func main() {
 
-	array_ds([]int{2, 2, 3, 4, 5, 6})
+	array_ds([]int{4, 0, 1})
 	ascending_arr(([]int{5, 3, 1, 6, 7, 8}))
 	isPallindrome("racecar")
 }
