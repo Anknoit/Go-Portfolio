@@ -21,8 +21,24 @@ func ascending_arr(min_arr []int) {
 	fmt.Println("Shortest value", min_arr[0])
 }
 
+// PALINDROME
+func isPallindrome(s string) bool {
+	//two pointer method
+	m, n := 0, len(s)-1
+	if s[m] != s[n] {
+		fmt.Println("Not a Pallindrome")
+		return false
+	} else {
+		m++
+		n--
+	}
+	fmt.Println("Is Pallindrome")
+	return true
+}
+
 func main() {
 
 	array_ds([]int{2, 2, 3, 4, 5, 6})
 	ascending_arr(([]int{5, 3, 1, 6, 7, 8}))
+	isPallindrome("racecar")
 }
