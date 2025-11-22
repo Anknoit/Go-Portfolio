@@ -1,7 +1,7 @@
 // ABOUT GO
 /*-Cross platform
 -Faster than C++
--Supports Mutithreadin (Goroutine, connsumes 2KB compared to normal 1MB used by other languages)\
+-Supports Mutithreading (Goroutine, connsumes 2KB compared to normal 1MB used by other languages)\
 -Supports Concurrent Programming applications
 -Great Memory Management
 -Statically Typed (i.e type checking before execution => variables are defined befoore execution duromg complie time, unlike python where variables are dtermined during the runtime which makes it slower and susceptible to errors.)
@@ -27,6 +27,14 @@ import (
 	// It is commonly used for packages that perform initialization or registration tasks.
 	// It helps keep the code clean and avoids unused import errors while still allowing the necessary side effects to occur.
 )
+
+func test_formatting() {
+	println("Code formatting and indentation happens automatically in VSCODE")
+}
+
+func another_format_test() {
+	fmt.Println("The braces even when written below the func declaration will be corrected as the lexer inserts semicolon while compiling the code")
+}
 
 func main() {
 	fmt.Println("Hello Fellow Warriors!")
