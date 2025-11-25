@@ -4,9 +4,11 @@ Learning Go and building project along the way, This README will be my note taki
 
 ## NOTES
 
+
+## CHAPTER 1
 1. Go compiles to a single native binary i.e. it does not require aother applications to run and is easy to distribute 
 2. go vet - scans for coding mistakes
-3. <b>Steps to create a Go project </b>
+### 3. <b>Steps to create a Go project </b>
 - mkdir project1 --- Make a project dir
 - go mod init *project name if in local / repo name if initializing a project from git*
     - A Go project is called a module
@@ -45,3 +47,42 @@ Learning Go and building project along the way, This README will be my note taki
 
     }
     ```
+- Makefile
+    ``` makefile
+    .DEFAULT_GOAL:= build
+    .PHONY:fmt vet build
+
+    fmt: 
+        @echo "Formatting..."
+        go fmt ./..
+    vet: fmt
+        go vet ./..
+    build: vet
+        go build
+    ```
+    - Each operation is called a target
+    - "./.." means this dir and all sub dirs
+    - stuff before : is name, stuff after : is the dependency, i.e. for vet:fmt when run it will ensure to run fmt command before it runs vet
+    - .PHONY - ensures whatever written in it is treated as command, for if there s a dir with same name as command can be confusing
+
+    - each target can be run separately using command make fmt, make vet, make build
+    - if only make is provided without any target parameters, it will run the whole makefile in order
+
+- Updating golang
+```bash
+Linux and BSD users need to download the latest version, move the old version to a
+backup directory, unpack the new version, and then delete the old version:
+$ mv /usr/local/go /usr/local/old-go
+$ tar -C /usr/local -xzf go1.20.6.linux-amd64.tar.gz
+$ rm -rf /usr/local/old-go
+```
+
+## CHAPTER 2 - Predeclared Types and Declarations
+
+1. Predeclared Types - boolean, float, int, strings
+2. 0 default value, any var declared but not assigned any value, makes it clearer
+3. Literals 
+    - Integer literal
+    - Float literal
+    - Rune Literal - 'single quote for rune'
+    - String literal - "double quote for strings"
