@@ -86,3 +86,19 @@ $ rm -rf /usr/local/old-go
     - Float literal
     - Rune Literal - 'single quote for rune'
     - String literal - "double quote for strings"
+
+## General Discoveries
+
+1. Placeholders
+    - %d for integers
+    - %s for strings
+    - %v universal holder with default values set for each type
+
+## Interview Questions I encountered for Golang Developer
+
+1. What is Mutex its uses?
+2. How do you secure the websocket endpoints?
+3. How do you secure connected clients?
+4. Explain goroutines and channels
+5. Difference between websocket and HTTP, advantages and disadv of websocket.
+6. Can we send any data type into channels or is it strict for a the given data type while pushing?

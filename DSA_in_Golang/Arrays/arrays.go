@@ -33,20 +33,31 @@ func ascending_arr(min_arr []int) {
 }
 
 // PALINDROME
+//
+//	func isPallindrome(s string) bool {
+//		//two pointer method
+//		m, n := 0, len(s)-1
+//		if s[m] != s[n] {
+//			fmt.Println("Not a Pallindrome")
+//			return false
+//		} else {
+//			m++
+//			n--
+//		}
+//		fmt.Println("Is Pallindrome")
+//		return true
+//	}
 func isPallindrome(s string) bool {
-	//two pointer method
 	m, n := 0, len(s)-1
 	if s[m] != s[n] {
-		fmt.Println("Not a Pallindrome")
-		return false
+		fmt.Printf("%s is not a Pallindrome\n", s)
 	} else {
 		m++
-		n--
+		n++
 	}
-	fmt.Println("Is Pallindrome")
+	fmt.Printf("%v is a pallindrome\n", s)
 	return true
 }
-
 func main() {
 
 	array_ds([]int{4, 0, 1})
