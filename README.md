@@ -81,18 +81,81 @@ $ rm -rf /usr/local/old-go
 
 1. Predeclared Types - boolean, float, int, strings
 2. 0 default value, any var declared but not assigned any value, makes it clearer
-3. Literals 
+3. Literals - Hard coded values - 
     - Integer literal
     - Float literal
-    - Rune Literal - 'single quote for rune'
-    - String literal - "double quote for strings"
+    - Rune Literal - 'single quote for rune' - used for unicode values such as newline \n etc....
+    Strings
+        - Interpreted String Literal - "double quote for strings, interprets unicode values such as new lines etc.."
+        - Raw String - `Written in inverted commas, take whole string as it is, usually to write full SQL Queries`
 
+    Literal Type Example Use
+
+    Integer 10, 0b1010, 0xFF Counting, IDs, bit masks, file perms
+
+    Float 3.14, 1e5 Math calculations, scientific values
+
+    Rune 'a', '\\n', \\u03A9 Character processing, unicode
+
+    String "hi", \`multi\\nline\` Logging, JSON, config, SQL, regex
+
+    Bool true, false Conditions
+
+    Nil nil Empty pointer/map/slice
+
+    ``` go
+    package main
+
+        import "fmt"
+
+        func main() {
+            port := 8080               // integer literal
+            pi := 3.1415               // float literal
+            newline := '\n'            // rune literal
+            path := "C:\\logs\\file"   // interpreted string
+            sql := `SELECT * FROM users` // raw string
+            isActive := true           // boolean literal
+
+            fmt.Println(port, pi, newline, path, sql, isActive)
+        }
+    ```
+4. Go unlike other langages doesnt have Automatic type conversion, manual conversion needs to be done that follows conversion rules 
+
+5. var vs :=
+    - The := operator can do one trick that you cannot do with var: it allows you to assign
+    values to existing variables too. As long as at least one new variable is on the lefthand
+    side of the :=, any of the other variables can already exist:
+    ``` go
+    x := 10
+    x, y := 30, "hello"
+    ```
+    - CANNOT use := at package level, only use inside a function. (At package level use var)
+
+6. <b>Avoid declaring variables outside of functions because they compli‐
+cate data flow analysis.</b>
+    - You should rarely declare variables outside of functions, in what’s called the package
+block. Package-level variables whose values change are a
+bad idea. When you have a variable outside of a function, it can be difficult to track
+the changes made to it, which makes it hard to understand how data is flowing
+through your program. This can lead to subtle bugs. As a general rule, you should
+only declare variables in the package block that are effectively immutable (constant, not changing).
 ## General Discoveries
 
 1. Placeholders
     - %d for integers
     - %s for strings
     - %v universal holder with default values set for each type
+2. Exported name always begins with capital letter
+    - math.Pi   
+    - rand.Int
+    - - any imported package will have function/methods in capital
+3. Function can return any number of results via return
+4. ``` go
+    type User struct {
+        Name string `json:"name"`
+        Age int `json:"age"
+        Email `
+    }
 
 ## Interview Questions I encountered for Golang Developer
 
@@ -101,4 +164,5 @@ $ rm -rf /usr/local/old-go
 3. How do you secure connected clients?
 4. Explain goroutines and channels
 5. Difference between websocket and HTTP, advantages and disadv of websocket.
-6. Can we send any data type into channels or is it strict for a the given data type while pushing?
+6. Can we send any data type into channels or is it strict for a the given data type while pushing? - NO Channels are typed
+    - make(chan int) - can only receive integer types
