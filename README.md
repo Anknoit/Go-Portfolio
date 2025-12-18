@@ -1,5 +1,5 @@
 # Go-Portfolio
-Learning Go and building project along the way, This README will be my note taking place
+Learning Go and building project along the way, This README will be my note taking place taking reference from "Learning Go: An Idiomatic Approach to Real World Go"
 
 
 ## NOTES
@@ -107,10 +107,10 @@ $ rm -rf /usr/local/old-go
     package main
 
         import "fmt"
-
+        x := 10 // WRONG
         func main() {
             port := 8080               // integer literal
-            pi := 3.1415               // float literal
+            pi := 3.1415               // float literal 
             newline := '\n'            // rune literal
             path := "C:\\logs\\file"   // interpreted string
             sql := `SELECT * FROM users` // raw string
@@ -139,6 +139,22 @@ bad idea. When you have a variable outside of a function, it can be difficult to
 the changes made to it, which makes it hard to understand how data is flowing
 through your program. This can lead to subtle bugs. As a general rule, you should
 only declare variables in the package block that are effectively immutable (constant, not changing).
+
+## Chapter 3 - Composite Types
+## Chapter 4 - Blocks, Shadows, Control Structures
+## Chapter 5 - Functions
+## Chapter 6 - Pointers
+## Chapter 7 - Types, Methods & Interfaces
+## Chapter 8 - Generic
+## Chapter 9 - Errors
+## Chapter 10 - Modules, Packages and Imports
+## Chapter 11 - Go Tooling
+## Chapter 12 - Concurrency in Go
+## Chapter 13 - Standard Library
+## Chapter 14 - The context
+## Chapter 15 - Writing Tests
+
+
 ## General Discoveries
 
 1. Placeholders
