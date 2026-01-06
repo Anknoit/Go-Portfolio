@@ -139,10 +139,56 @@ bad idea. When you have a variable outside of a function, it can be difficult to
 the changes made to it, which makes it hard to understand how data is flowing
 through your program. This can lead to subtle bugs. As a general rule, you should
 only declare variables in the package block that are effectively immutable (constant, not changing).
+7. multiple variable declaration 
+```go
+const (
+    port = 8000
+    host = "localhost"
+    server = "serverName"   
+)
+```
 
 ## Chapter 3 - Composite Types
 ## Chapter 4 - Blocks, Shadows, Control Structures
 ## Chapter 5 - Functions
+1. function declaration
+``` go
+// if same argument types func sameArg(arg1, arg2 str) str {} - ALSO CALLED VARDIAC PARAMETERS
+func someName(arg1 num, arg2 str) str {
+    // logic here
+}
+```
+2. NO Named and Optional parameters ONLY Positional Parameters
+    - NAMED = arguments which needs values for function to execute
+    - OPTIONAL = arguments with default value along with named args
+    1. Why not named and optional?
+        - what is named params? - arguments provided which when function is called has to be given value to
+        - avoid hidden defaults in case of optional param
+            ``` python
+            def optionalParam(host=8000, serverName):
+                {
+                    print(serverName)
+                }
+            optionalParam(serverName='name1')
+            ```
+        - ambiguity
+    2. Simulating Named and Optional Parameters
+        ``` go
+        
+        ```
+3. Variadic Input Parameters - numerous SIMILAR TYPE input variable parameters for a function
+    ```go
+
+    func variadicInout(numbers ...int) int{
+        total = 0
+        for _,num := range numbers{
+            total += num
+        }
+        return total
+    }
+    ```
+    - MUST BE THE LAST PARAMETER in function bracket
+    - Inside the argument parameter, variadic input variables act as a collection (slices)
 ## Chapter 6 - Pointers
 ## Chapter 7 - Types, Methods & Interfaces
 ## Chapter 8 - Generic
